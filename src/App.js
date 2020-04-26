@@ -1,9 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const wrapperRef = useRef(null);
-
   const [videos, setVideos] = useState([
     "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   ]);
@@ -48,7 +46,7 @@ function App() {
   return (
     <>
       <div className="stream-wrapper">
-        <div className="grid-wrapper" ref={wrapperRef} style={getStyle()}>
+        <div className="grid-wrapper" style={getStyle()}>
           {videos.map((url, idx) => {
             return (
               <video
